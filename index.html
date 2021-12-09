@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random MTG</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body onload="comprobar()">
+    <div class="main">
+        <div class="card">
+            <div class="divImg">
+                <img class="img" id="img" src="">
+            </div>
+            <div class="divTxt">
+                <div id="name" class="title"></div>
+                <div class="info">
+                    <div id="type"></div>
+                    <div id="colors"></div>
+                    <div id="mana"></div>
+                    <div id="stats"></div>
+                    <div id="txt"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        async function comprobar() {
+            const response = await fetch('http://localhost:4000/random');
+            const json = await response.json();
+            await fill(json)
+        }
+
+        function fill(json) {
+            document.getElementById('name').innerHTML = json.name
+            document.getElementById('img').src = json.image_uris.png
+            document.getElementById('type').innerHTML = 'Type: ' + json.type_line
+            document.getElementById('colors').innerHTML = 'Colors: ' + json.colors  
+            document.getElementById('mana').innerHTML = 'Mana Cost: ' + json.mana_cost
+            document.getElementById('stats').innerHTML = 'Stats: ' + json.power + '/' +json.toughness 
+            document.getElementById('txt').innerHTML = "Text:\n" + json.oracle_text
+        }
+    </script>
+</body>
+</html>

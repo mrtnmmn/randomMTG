@@ -1,0 +1,80 @@
+html, body {
+    margin: 0px;
+    height: 100%;
+}
+
+.main {
+    background-color:  #e1e1e1 ;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 60%;
+    height: 70%;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.divImg {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+}
+
+.divTxt {
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 2rem; 
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    
+}
+
+.title {
+    width: auto;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-weight: bolder;
+    font-size: 1.8rem;
+    text-decoration: underline;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.info {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 2rem;
+}
+
+.info > div{
+    padding-left: 50px;
+    padding-top: 1rem;
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 1.2rem;
+}
+
+.img {
+    height: 80%;
+}
